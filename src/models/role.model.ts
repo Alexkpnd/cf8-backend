@@ -6,7 +6,7 @@ export interface IRole extends Document {
     active: boolean;
 }
 const RoleSchema = new Schema<IRole> ({
-    role: {type:String, required:true, unique:true},
+    role: {type:String, required:[true, "Το πεδίο Role ειναι υποχρεωτικό" ], unique:true},
     description: {type:String},
     active: {type:Boolean, default:true}
 }, {

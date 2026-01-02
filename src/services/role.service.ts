@@ -12,3 +12,7 @@ export const createRole = async(payload: Partial<IRole>) => {
 export const updateRole = async(id:string, payload: Partial<IRole>) => {
     return Role.findByIdAndUpdate(id, payload, {new: true});   //new:true == αν κανεις update σε document που δεν υπάρχει, δημιουργησε το.
 }
+
+export const deleteRole = async(id:string) => {
+    return Role.findByIdAndDelete(id);
+}
