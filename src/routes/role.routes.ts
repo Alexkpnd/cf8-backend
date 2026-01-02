@@ -5,5 +5,6 @@ const router = Router();
 
 router.get('/', roleCtrl.list )
 router.post('/',roleCtrl.create);
+router.put('/:id', roleCtrl.update);
 
 export default router;

@@ -1,10 +1,14 @@
-import Role from '../models/role.model';
+import Role, {IRole} from '../models/role.model';
 
 export const findAllRoles = async() => {
     return Role.find().lean(); // to lean metatrepei ta objects se json 
 }
 
-export const createRole = async(payload: Object) => {
+export const createRole = async(payload: Partial<IRole>) => {
     const result = new Role(payload);
     return result.save()
 } 
+
+export const updateRole = async(id:string, payload: Partial<IRole>) => {
+    return Role.findByIdAndUpdate(id, payload, {new: true});   //new:true == αν κανεις update σε document που δεν υπάρχει, δημιουργησε το.
+}
