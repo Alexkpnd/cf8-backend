@@ -8,6 +8,7 @@ const app = express();
 
 app.use(morgan('dev'));
 
+// endiameses sinartiseis 
 app.use('/api/users', userRoutes);
 app.use('/api/roles', roleRoutes);
 

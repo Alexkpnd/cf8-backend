@@ -4,5 +4,6 @@ const router = Router();
 
 
 router.get('/', roleCtrl.list )
+router.post('/',roleCtrl.create);
 
 export default router;

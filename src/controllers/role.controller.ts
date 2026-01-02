@@ -9,3 +9,13 @@ export const list = async(req:Request, res:Response, next:NextFunction) => {
         next(err);
     }
 }
+
+export const create = async(req:Request, res:Response, next:NextFunction) => {
+    try{
+        console.log(">>>", req.body)
+        const result = await rolesService.createRole(req.body)
+        res.status(201).json(result);
+    }catch (err) {
+        next(err);
+    }
+}
