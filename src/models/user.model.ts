@@ -28,7 +28,7 @@ export interface IUser extends Document {
         // municipality?: string;
     // };
     phone?: IPhone[]; 
-    roles: Types.ObjectId;
+    roles: Types.ObjectId[];
 }
 
 const PhoneSchema = new Schema<IPhone>({
