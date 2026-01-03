@@ -16,3 +16,7 @@ export const updateRole = async(id:string, payload: Partial<IRole>) => {
 export const deleteRole = async(id:string) => {
     return Role.findByIdAndDelete(id);
 }
+
+export const getRoleByName = async(role:string) => {
+    return Role.findOne({role: role})
+}
