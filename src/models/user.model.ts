@@ -1,5 +1,25 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, Document, StringExpressionOperatorReturningBoolean } from "mongoose";
 
+export interface IPhone {
+    type: string;
+    number:string
+}
+
+export interface Iuser extends Document {
+    username: string;
+    password: string;
+    firstname?: string;
+    lastname?: string;
+    email?: string;
+    address?: {
+        area?: string;
+        street?: string;
+        number?: string;
+        po?: string;
+        municipality?: string;
+    };
+    phone?: IPhone[]; 
+}
 
 const PhoneSchema = new Schema({
     type: String,
