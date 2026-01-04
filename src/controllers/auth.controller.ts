@@ -1,6 +1,5 @@
 import {Request, Response, NextFunction} from 'express';
 import * as authService from '../services/auth.service';
-import { error } from 'node:console';
 
 export const login = async(req:Request, res: Response, next: NextFunction) => {
     try{
