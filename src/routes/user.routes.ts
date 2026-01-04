@@ -21,8 +21,8 @@ import { hasAdminRole } from "../middlewares/user.middleware";
  *          200:
  *              description: Response list of users
  */
-router.get("/", authenticate, hasAdminRole, userCtrl.list);
-router.get('/:id', validateObjectId(), userCtrl.getOne);
+router.get("/", authenticate, userCtrl.list);
+router.get('/:id', hasAdminRole, validateObjectId(), userCtrl.getOne);
 /**
  * @openapi
  * /users:
