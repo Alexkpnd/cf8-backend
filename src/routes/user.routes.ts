@@ -35,19 +35,19 @@ router.get('/:id', validateObjectId(), userCtrl.getOne);
  *          required: true
  *          content:
  *              application/json:
- *              schema:
- *                  type: object
- *                  properties:
- *                      username:
- *                          type: string
- *                      password:
- *                          type: string
- *                      firstname:
- *                          type: string
- *                      lastname:
- *                          type: string
- *                      email:
- *                          type: string
+ *                  schema:
+ *                      type: object
+ *                      properties:
+ *                          username:
+ *                              type: string
+ *                          password:
+ *                              type: string
+ *                          firstname:
+ *                              type: string
+ *                          lastname:
+ *                              type: string
+ *                          email:
+ *                              type: string
  *      responses:
  *          201: 
  *              description: User Created

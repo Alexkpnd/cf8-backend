@@ -19,7 +19,7 @@ export const authenticate = (req:Request, res:Response, next: NextFunction) => {
     }
 
     const token = header.split(' ')[1]
-    console.log("TOKEN >>>",token)
+    // console.log("TOKEN >>>",token)
 
     if (!token) {
         return res.status(401).json({message: 'Invalid authorization format'});
@@ -28,7 +28,7 @@ export const authenticate = (req:Request, res:Response, next: NextFunction) => {
     try {
         const payload = jwt.verify(token, JWT_SEC);
         req.user = payload;
-        console.log("User >>>", req.user)
+        // console.log("User >>>", req.user)
         next();
     } catch (err) {
         res.status(401).json({message: "Invalid or expired token"})
