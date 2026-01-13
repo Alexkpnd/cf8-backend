@@ -1,6 +1,6 @@
 import express from "express";
 import morgan from "morgan";
-
+import cors from 'cors';
 import userRoutes from './routes/user.routes';
 import roleRoutes from './routes/role.routes';
 import authRoutes from './routes/auth.routes';
@@ -13,6 +13,10 @@ setupSwagger(app);
 
 app.use(morgan('dev'));
 app.use(express.json()); 
+app.use(cors({
+    // origin: '*'    // για να δέχεται κλήσεις απο παντού.
+    origin: ['http://localhost:4200']
+}));
 
 // endiameses sinartiseis 
 app.use('/api/users', userRoutes);
