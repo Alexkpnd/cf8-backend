@@ -15,7 +15,7 @@ app.use(morgan('dev'));
 app.use(express.json()); 
 app.use(cors({
     // origin: '*'    // για να δέχεται κλήσεις απο παντού.
-    origin: ['http://localhost:4200']
+    origin: ['http://localhost:4200', 'https://alexkpnd.github.io']
 }));
 
 // endiameses sinartiseis 
